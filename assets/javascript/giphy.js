@@ -3,7 +3,7 @@
 $(document).ready(function () {
 
   //initial array of subjects
-  let topics = ["yaaas", "clap", "YOLO", "love", "no", "yes", "OMG", "LOL", "wow", "yes", "disgusted", "sad", "tired", "SMH"];
+  let topics = ["YAAASSS", "YOLO", "LOVE", "NO", "SRSLY", "OMG", "LOL", "WOW", "YES", "UGHHH", "YIKES", "EYEROLL", "SMH"];
 
   console.log(topics);
 
@@ -18,8 +18,6 @@ $(document).ready(function () {
       const buttonDiv = $("<div>");
 
       const btnText = $("<button>").text(topics[i]).addClass("text float-left mx-2 my-2 btn btn-group btn-light btn-outline-dark btn-lg");
-
-      btnText.attr("#clickForGif")
       
       buttonDiv.append(btnText);
 
@@ -48,11 +46,11 @@ $(document).ready(function () {
 
 
   //
-  $("#topicBtns").on("click", function (event) {
+  $("#topicBtns").on("click", function (e) {
 
-    event.preventDefault();
+    e.preventDefault();
 
-    let giphy = $(this).attr("data-person");
+    const giphy = $(this).text('');
 
     const queryURL =("https://api.giphy.com/v1/gifs/search?q=" + giphy + "&limit=10&api_key=551UgcDQTs1GvIWT37yUtpo3MbqJ6ShZ");
 
@@ -63,19 +61,23 @@ $(document).ready(function () {
 
         console.log(queryURL);
 
-        // var results = response.data;
+        var results = response.data;
 
-        // $.each(results, function (i) {
+        $.each(results, function (i) {
 
-        //   const gifDiv = $("<div>");
+          const gifDiv = $("<div>");
 
-        //   const gif = results[i];
+          // const gif = results[i].images.fixed_width_small_still;
 
-        //   const displayGif = $("<img>").
+          let displayGif = $("<img>");
 
-        //   displayGif.attr("src", gif[i]);
+          displayGif.attr("src", results[i].images.fixed_width_small_still.url);
 
-        //   gifDiv.append(displayGif);
+          // gifDiv.append(gif)
+
+          $(gifDiv).appendTo("#gifs");
+          gifDiv.append(displayGif);
+
 
         });
 
@@ -94,4 +96,4 @@ $(document).ready(function () {
         //     };
       }); //end of then
   }); //end of on click inputbtn
-//});
+});
