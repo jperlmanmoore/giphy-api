@@ -46,13 +46,15 @@ $(document).ready(function () {
 
 
   //
-  $("#topicBtns").on("click", function (e) {
+  $("button").on("click", function (e) {
 
     e.preventDefault();
 
-    const giphy = $(this).text('');
+    const giphy = $(this).text();
 
-    const queryURL =("https://api.giphy.com/v1/gifs/search?q=" + giphy + "&limit=10&api_key=551UgcDQTs1GvIWT37yUtpo3MbqJ6ShZ");
+    const api_key = ("551UgcDQTs1GvIWT37yUtpo3MbqJ6ShZ");
+
+    const queryURL = ("https://api.giphy.com/v1/gifs/search?q=" + giphy + "&limit=10&api_key=551UgcDQTs1GvIWT37yUtpo3MbqJ6ShZ");
 
     $.ajax({
         url: queryURL,
@@ -63,23 +65,32 @@ $(document).ready(function () {
 
         var results = response.data;
 
+
         $.each(results, function (i) {
 
           const gifDiv = $("<div>");
 
-          // const gif = results[i].images.fixed_width_small_still;
+          const gif = results[i].images;
 
           let displayGif = $("<img>");
+          //console.log(displayGif);
 
-          displayGif.attr("src", results[i].images.fixed_width_small_still.url);
+          displayGif.attr("src", results[i].images.fixed_height.url);
 
-          // gifDiv.append(gif)
+          //gifDiv.append(gif)
+          gifDiv.html(displayGif);
 
-          $(gifDiv).appendTo("#gifs");
-          gifDiv.append(displayGif);
+          $("#gifs").prepend(gifDiv);
 
 
         });
+
+
+
+      }); //end of then
+  }); //end of on click inputbtn
+});
+
 
 
 
@@ -94,6 +105,3 @@ $(document).ready(function () {
         //       $(this).attr("src", $(this).attr("data-still"));
         //       $(this).attr("data-state", "still");
         //     };
-      }); //end of then
-  }); //end of on click inputbtn
-});
