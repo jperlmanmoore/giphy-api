@@ -1,5 +1,13 @@
+body {
+    background-color: aliceblue;
+}
+
 .text {
 /*font-family: 'Shadows Into Light', cursive;*/
 font-family: 'Shadows Into Light Two', cursive;
 /*font-family: 'Nothing You Could Do', cursive;*/
+}
+
+.btncolor {
+    background-color: lightgoldenrodyellow;
 }
