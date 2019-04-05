@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
   //initial array of subjects
-  let topics = ["YAAASSS", "YOLO", "WHAAA", "What the What", "LOVE", "NO", "SRSLY", "OMG", "LOL", "WOW", "YES", "UGHHH", "YIKES", "EYEROLL", "SMH"];
+  let topics = ["YAAASSS", "YOLO", "WHAAA", "WHAT THE WHAT", "I HEART YOU", "NO", "SRSLY", "OMG", "LOL", "WOW", "YES", "UGHHH", "YIKES", "EYEROLL", "SMH"];
 
   console.log(topics);
 
@@ -33,6 +33,7 @@ $(document).ready(function () {
   giphySearch();
 
   //search box and make a new button
+  //if no text, then no new button
   function newButton() {
     $("#inputBtn").on("click", function (e) {
       e.preventDefault();
@@ -43,12 +44,12 @@ $(document).ready(function () {
 
       showButtons();
       giphySearch();
-      
+
     });
-    
+
   };
 
- // new button prevent default
+  // new button prevent default
   $(newButton).on("click", function (e) {
     e.preventDefault();
   })
@@ -65,8 +66,6 @@ $(document).ready(function () {
 
       const giphy = $(this).text();
 
-      // const api_key = ("551UgcDQTs1GvIWT37yUtpo3MbqJ6ShZ");
-
       const queryURL = ("https://api.giphy.com/v1/gifs/search?q=" + giphy + "&limit=10&api_key=551UgcDQTs1GvIWT37yUtpo3MbqJ6ShZ");
 
       $.ajax({
@@ -79,7 +78,7 @@ $(document).ready(function () {
         var results = response.data;
 
         //loop results and display gif
-        $.each(results, function(i) {
+        $.each(results, function (i) {
 
           const gifDiv = $("<div>");
 
@@ -87,34 +86,44 @@ $(document).ready(function () {
           //console.log(displayGif);
 
           displayGif.attr("src", results[i].images.fixed_height.url);
-          displayGif.addClass("mx-2 my-2 float-left align-items-center ");
+          displayGif.addClass("stop mx-2 my-2 float-left align-items-center ");
 
-          //gifDiv.append(gif)
+
           gifDiv.html(displayGif);
 
           $("#gifs").prepend(gifDiv);
 
-          // if (response >= 10) {
-          //   return false;
-          // }
-
         });
-
       }); //end of then
     }); //end of on click inputbtn
   };
 
-//stop and start gif
-// $(".gif").on("click", function () {
-//     var state = $(this).attr("data-state");
+  //stop and start - from class example
+  function stopStartGif() {
+    $(".stop").on("click", function () {
+      var playState = $(this).attr("data-playState");
 
-//     if (state === "still") {
-//       $(this).attr("src", $(this).attr("data-animate"));
-//       $(this).attr("data-state", "animate");
-//     } else {
-//       $(this).attr("src", $(this).attr("data-still"));
-//       $(this).attr("data-state", "still");
-//     };
+      if (playState === "animate") {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-playState", "still");
+      } else {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      };
+    });
+  };
 
+  stopStartGif();
+
+  //stop and start gif class example
+  // $(".gif").on("click", function () {
+  //     var state = $(this).attr("data-state");
+
+  //     if (state === "still") {
+  //       $(this).attr("src", $(this).attr("data-animate"));
+  //       $(this).attr("data-state", "animate");
+  //     } else {
+  //       $(this).attr("src", $(this).attr("data-still"));
+  //       $(this).attr("data-state", "still");
+  //     
 });
-
