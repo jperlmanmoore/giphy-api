@@ -16,7 +16,7 @@ $(document).ready(function () {
 
       const buttonDiv = $("<div>");
 
-      const btnText = $("<button>").text(topics[i]).addClass("text btncolor float-left mx-2 my-2 btn btn-outline-dark btn-lg");
+      const btnText = $("<button>").text(topics[i]).addClass("text float-left mx-2 my-2 btn btn-outline-dark btn-lg");
 
       buttonDiv.append(btnText);
 
@@ -73,7 +73,7 @@ $(document).ready(function () {
         method: "GET"
       }).then(function (response) {
 
-        console.log(queryURL);
+        console.log(response);
 
         var results = response.data;
 
@@ -86,7 +86,7 @@ $(document).ready(function () {
           //console.log(displayGif);
 
           displayGif.attr("src", results[i].images.fixed_height.url);
-          displayGif.addClass("stop mx-2 my-2 float-left align-items-center ");
+          displayGif.addClass("stop mx-2 my-2 float-left align-items-center");
 
 
           gifDiv.html(displayGif);
@@ -98,32 +98,26 @@ $(document).ready(function () {
     }); //end of on click inputbtn
   };
 
-  //stop and start - from class example
-  function stopStartGif() {
-    $(".stop").on("click", function () {
-      var playState = $(this).attr("data-playState");
+  //stop and start - more or less from class example
+   
+  
+  $("img").on("click", function (event) {
+    event.preventDefault;
 
-      if (playState === "animate") {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-playState", "still");
+    console.log("hey");
+
+    const playState = $("img");
+    // playState.attr("data-playing");
+    console.log(playState);
+
+    if (playState === "data-playing") {
+        // $(this).removeAttr("src", results[i.images.fixed_height.url]);
+        $(this).append("src", results[i].images.fixed_height_still.url);
+        $(this).attr("data-stop", "still");
       } else {
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate");
+        //
       };
     });
-  };
+  
 
-  stopStartGif();
-
-  //stop and start gif class example
-  // $(".gif").on("click", function () {
-  //     var state = $(this).attr("data-state");
-
-  //     if (state === "still") {
-  //       $(this).attr("src", $(this).attr("data-animate"));
-  //       $(this).attr("data-state", "animate");
-  //     } else {
-  //       $(this).attr("src", $(this).attr("data-still"));
-  //       $(this).attr("data-state", "still");
-  //     
 });

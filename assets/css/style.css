@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(228, 228, 228)
+    background-color: rgb(243, 242, 242)
 }
 
 .text {
@@ -9,12 +9,8 @@ font-weight: bold;
 /*font-family: 'Nothing You Could Do', cursive;*/
 }
 
-.btncolor {
-    background-color: rgb(253, 250, 246);
-}
-
 .jumbotron {
-    
+    background-color: black;
     max-height: 175px;
     background-image: url('https://media0.giphy.com/media/xNBcChLQt7s9a/giphy.gif?cid=790b76115ca783c035307238510bbff6')
 }
