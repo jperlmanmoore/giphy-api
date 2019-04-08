@@ -1,6 +1,6 @@
 //
-$(document).ready(function () {
-
+//$(document).ready(function () {
+$(function() {
   //initial array of subjects
   let topics = ["YAAASSS", "YOLO", "WHAAA", "WHAT THE WHAT", "SRSLY", "OMG", "LOL", "143", "GR8", "IKR", "EYEROLL", "SMH", "OKURR", "ERMAHGERD"];
 
@@ -38,12 +38,12 @@ $(document).ready(function () {
       e.preventDefault();
 
       const inputNewTopic = $("#input").val().trim();
+      if(inputNewTopic != "") {
+        topics.push(inputNewTopic);
 
-      topics.push(inputNewTopic);
-
-      showButtons();
-      giphySearch();
-
+        showButtons();
+        giphySearch();
+      }
     });
 
   };
@@ -53,7 +53,7 @@ $(document).ready(function () {
     e.preventDefault();
   })
 
-
+  var results;
   //giphy search on API & display giphys
 
   function giphySearch() {
@@ -73,18 +73,20 @@ $(document).ready(function () {
 
         console.log(response);
 
-        var results = response.data;
+        results = response.data;
 
         //loop results and display gif
         $.each(results, function (i) {
 
           const gifDiv = $("<div class='gifDiv'>");
 
-          let displayGif = $("<img>").attr("src", results[i].images.fixed_height_still.url).addClass("stopstart mx-2 my-2 float-left align-items-center");
-          let movingGif = $("<img>").attr("src", results[i].images.fixed_height.url).addClass("stopstart mx-2 my-2 float-left align-items-center");
+          let displayGif = $("<img>")
+            .attr("src", results[i].images.fixed_height_still.url)
+            .addClass("stopstart mx-2 my-2 float-left align-items-center")
+            .data("i", i);
           
           console.log(displayGif);
-          console.log(movingGif);
+          //console.log(movingGif);
 
           gifDiv.html(displayGif);
 
@@ -96,27 +98,31 @@ $(document).ready(function () {
       }); //end of then
     }); //end of on click inputbtn
 
-    
+
   };
 
+  //stop and start - more or less from class example 
+  $("#gifs").on("click", ".stopstart", function () {
 
-$(".gifDiv").on("click", "document", function(e) {
-  console.log("gifDiv");
-});
-   
- //stop and start - more or less from class example 
- $(".stopstart").on("click", "document", function () {
+    console.log(".stopstart");
+    var i = $(this).data("i");
+    let movingGif = $("<img>")
+      .attr("src", results[i].images.fixed_height.url)
+      .addClass("stopstart moving mx-2 my-2 float-left align-items-center")
+      .data("i", i);
 
-  console.log(".stopstart");
+    let displayGif = $("<img>")
+      .attr("src", results[i].images.fixed_height_still.url)
+      .addClass("stopstart mx-2 my-2 float-left align-items-center")
+      .data("i", i);
 
-  let playState = $(".stopstart");
-  console.log(playState);
+    let isMoving = $(this).hasClass("moving");
+    console.log(isMoving);
 
-  if (playState === ".stopstart") {
+    if (isMoving === false) {
       $(this).replaceWith(movingGif);
- 
     } else {
-     $(this).replacewith(displayGif); 
+      $(this).replaceWith(displayGif);
     };
   });
 });
