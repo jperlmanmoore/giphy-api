@@ -26,36 +26,37 @@ $(function() {
 
     }); //end for loop for topics
 
-  };
+  }; //end showButtons
 
   showButtons();
   giphySearch();
+  newButton();
 
   //search box and make a new button
   //if no text, then no new button
+  //*need to make so clears text on submit
+  //*need to make input text be capital letters
   function newButton() {
     $("#inputBtn").on("click", function (e) {
+
       e.preventDefault();
 
       const inputNewTopic = $("#input").val().trim();
-      if(inputNewTopic != "") {
+      
+      if(inputNewTopic != "") {   //if inputNewTopis isn't empty
+      
         topics.push(inputNewTopic);
 
         showButtons();
+      
         giphySearch();
-      }
-    });
+      } //end of if
+    }); //end of onclick
+  }; //end of newButton
 
-  };
+  let results;
 
-  // new button prevent default
-  $(newButton).on("click", function (e) {
-    e.preventDefault();
-  })
-
-  var results;
   //giphy search on API & display giphys
-
   function giphySearch() {
 
     $(".text").on("click", function (e) {
@@ -85,16 +86,14 @@ $(function() {
             .addClass("stopstart mx-2 my-2 float-left align-items-center")
             .data("i", i);
           
-          console.log(displayGif);
+          //console.log(displayGif);
           //console.log(movingGif);
 
           gifDiv.html(displayGif);
 
           $("#gifs").prepend(gifDiv);
 
-
-
-        });
+        }); //end of each
       }); //end of then
     }); //end of on click inputbtn
 
@@ -104,25 +103,27 @@ $(function() {
   //stop and start - more or less from class example 
   $("#gifs").on("click", ".stopstart", function () {
 
-    console.log(".stopstart");
+    //console.log(".stopstart");
     var i = $(this).data("i");
     let movingGif = $("<img>")
       .attr("src", results[i].images.fixed_height.url)
       .addClass("stopstart moving mx-2 my-2 float-left align-items-center")
       .data("i", i);
 
+    //still image
     let displayGif = $("<img>")
       .attr("src", results[i].images.fixed_height_still.url)
       .addClass("stopstart mx-2 my-2 float-left align-items-center")
       .data("i", i);
 
+    //moving image
     let isMoving = $(this).hasClass("moving");
-    console.log(isMoving);
+    //console.log(isMoving);
 
     if (isMoving === false) {
       $(this).replaceWith(movingGif);
     } else {
       $(this).replaceWith(displayGif);
-    };
-  });
-});
+    }; //end else
+  }); //end onclick
+}); //end document
