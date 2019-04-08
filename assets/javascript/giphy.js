@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
   //initial array of subjects
-  let topics = ["YAAASSS", "YOLO", "WHAAA", "WHAT THE WHAT", "I HEART YOU", "NO", "SRSLY", "OMG", "LOL", "WOW", "YES", "UGHHH", "YIKES", "EYEROLL", "SMH"];
+  let topics = ["YAAASSS", "YOLO", "WHAAA", "WHAT THE WHAT", "SRSLY", "OMG", "LOL", "143", "GR8", "IKR", "EYEROLL", "SMH", "OKURR", "ERMAHGERD"];
 
   console.log(topics);
 
@@ -26,7 +26,6 @@ $(document).ready(function () {
 
     }); //end for loop for topics
 
-    // console.log(renderButtons);
   };
 
   showButtons();
@@ -55,9 +54,8 @@ $(document).ready(function () {
   })
 
 
-  //giphy search on API
+  //giphy search on API & display giphys
 
-  //maybe because i used class name text and not data-name for the buttons this needs to be fixed
   function giphySearch() {
 
     $(".text").on("click", function (e) {
@@ -80,44 +78,45 @@ $(document).ready(function () {
         //loop results and display gif
         $.each(results, function (i) {
 
-          const gifDiv = $("<div>");
+          const gifDiv = $("<div class='gifDiv'>");
 
-          let displayGif = $("<img>");
-          //console.log(displayGif);
-
-          displayGif.attr("src", results[i].images.fixed_height.url);
-          displayGif.addClass("stop mx-2 my-2 float-left align-items-center");
-
+          let displayGif = $("<img>").attr("src", results[i].images.fixed_height_still.url).addClass("stopstart mx-2 my-2 float-left align-items-center");
+          let movingGif = $("<img>").attr("src", results[i].images.fixed_height.url).addClass("stopstart mx-2 my-2 float-left align-items-center");
+          
+          console.log(displayGif);
+          console.log(movingGif);
 
           gifDiv.html(displayGif);
 
           $("#gifs").prepend(gifDiv);
 
+
+
         });
       }); //end of then
     }); //end of on click inputbtn
+
+    
   };
 
-  //stop and start - more or less from class example
+
+$(".gifDiv").on("click", "document", function(e) {
+  console.log("gifDiv");
+});
    
-  
-  $("img").on("click", function (event) {
-    event.preventDefault;
+ //stop and start - more or less from class example 
+ $(".stopstart").on("click", "document", function () {
 
-    console.log("hey");
+  console.log(".stopstart");
 
-    const playState = $("img");
-    // playState.attr("data-playing");
-    console.log(playState);
+  let playState = $(".stopstart");
+  console.log(playState);
 
-    if (playState === "data-playing") {
-        // $(this).removeAttr("src", results[i.images.fixed_height.url]);
-        $(this).append("src", results[i].images.fixed_height_still.url);
-        $(this).attr("data-stop", "still");
-      } else {
-        //
-      };
-    });
-  
-
+  if (playState === ".stopstart") {
+      $(this).replaceWith(movingGif);
+ 
+    } else {
+     $(this).replacewith(displayGif); 
+    };
+  });
 });
