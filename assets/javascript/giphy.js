@@ -1,4 +1,4 @@
-//
+// I forgot to add the rating of the gifs - :(
 //$(document).ready(function () {
 $(function() {
   //initial array of subjects
@@ -65,7 +65,7 @@ $(function() {
 
       const giphy = $(this).text();
 
-      const queryURL = ("https://api.giphy.com/v1/gifs/search?q=" + giphy + "&limit=10&offset=" + Math.floor(Math.random() * 50) + "&api_key=551UgcDQTs1GvIWT37yUtpo3MbqJ6ShZ");
+      const queryURL = ("https://api.giphy.com/v1/gifs/search?q=" + giphy + "&rating=PG&limit=10&offset=" + Math.floor(Math.random() * 50) + "&api_key=551UgcDQTs1GvIWT37yUtpo3MbqJ6ShZ");
 
       $.ajax({
         url: queryURL,
@@ -96,7 +96,6 @@ $(function() {
         }); //end of each
       }); //end of then
     }); //end of on click inputbtn
-
 
   };
 
