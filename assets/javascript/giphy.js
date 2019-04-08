@@ -99,7 +99,7 @@ $(function() {
 
   };
 
-  //stop and start - more or less from class example 
+  //stop and start 
   $("#gifs").on("click", ".stopstart", function () {
 
     //console.log(".stopstart");
