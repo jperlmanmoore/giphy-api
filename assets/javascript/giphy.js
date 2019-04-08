@@ -16,7 +16,7 @@ $(function() {
 
       const buttonDiv = $("<div>");
 
-      const btnText = $("<button>").text(topics[i]).addClass("text float-left mx-2 my-2 btn btn-outline-dark btn-lg");
+      const btnText = $("<button>").text(topics[i]).addClass("text border-0 float-left mx-2 my-2 btn btn-outline-secondary btn-lg");
 
       buttonDiv.append(btnText);
 
@@ -64,7 +64,7 @@ $(function() {
 
       const giphy = $(this).text();
 
-      const queryURL = ("https://api.giphy.com/v1/gifs/search?q=" + giphy + "&limit=10&api_key=551UgcDQTs1GvIWT37yUtpo3MbqJ6ShZ");
+      const queryURL = ("https://api.giphy.com/v1/gifs/search?q=" + giphy + "&limit=10&offset=" + Math.floor(Math.random() * 50) + "&api_key=551UgcDQTs1GvIWT37yUtpo3MbqJ6ShZ");
 
       $.ajax({
         url: queryURL,

@@ -26,7 +26,15 @@ font-weight: bold;
     font-weight: bolder;
     color: white;
     outline: none;
+    font-kerning: 4px;
 }
 
+#topicBtns {
+    margin: 0 auto;
+}
+
+.giphylink {
+    color: white;
+}
 
 
