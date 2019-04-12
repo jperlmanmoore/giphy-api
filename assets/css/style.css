@@ -1,12 +1,17 @@
-body {
-    background-color: rgb(243, 242, 242)
+ body {
+    background-color: rgb(255, 255, 255)
 }
 
 .text {
-/*font-family: 'Shadows Into Light', cursive;*/
-font-family: 'Shadows Into Light Two', cursive;
+font-family: 'Montserrat', sans-serif;
+/* font-family: 'Raleway', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Dosis', sans-serif;
+font-family: 'Hind', sans-serif;
+font-family: 'Asap', sans-serif;
+font-family: 'Questrial', sans-serif;
+font-family: 'Quattrocento Sans', sans-serif; */
 font-weight: bold;
-/*font-family: 'Nothing You Could Do', cursive;*/
 }
 
 .jumbotron {
@@ -35,6 +40,4 @@ font-weight: bold;
 
 .giphylink {
     color: white;
-}
-
-
+} 

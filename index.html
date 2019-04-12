@@ -8,55 +8,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Shadows+Into+Light|Shadows+Into+Light+Two"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Asap|Dosis|Hind|Montserrat|Quattrocento+Sans|Questrial|Quicksand|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">        
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
-    <a class="giphylink" href="https://giphy.com/gifs/shine-particles-box-3xz2BRU6WpaxKiPzuE">via GIPHY</a>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-2 text-center jmbtrntext">Success!</h1>
+  
+<!-- Navbar structure -->
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper green lighten-2 text">
+      <a href="#" class="brand-logo center black-text">budget</a>
     </div>
-  </div>
+  </nav>
+</div>
 
-  <div class="container-fluid">
-    <div class="form">
-      <input type="text" class="border-0 btntext text-dark form-control" id="input" placeholder="search for a new giphy">
-      <button type="submit" id="inputBtn" class="mt-1 border-0 btn text-secondary btntext btn-outline-secondary">submit</button>
-    </div>
-  </div>
+<div>
+<form action="#">
+  <p class="range-field">
+    <input type="range" id="test5" min="0" max="100" />
+  </p>
+</form>
+<form action="#">
+  <p class="range-field">
+    <input type="range" id="test5" min="0" max="100" />
+  </p>
+</form>
+<form action="#">
+  <p class="range-field">
+    <input type="range" id="test5" min="0" max="100" />
+  </p>
+</form>
+<form action="#">
+  <p class="range-field">
+    <input type="range" id="test5" min="0" max="100" />
+  </p>
+</form>
+</div>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <div id="topicBtns"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <div id="gifs">
+<!-- Modal Structure -->
+<a class="waves-effect waves-light green lighten-4 btn modal-trigger" href="#modal1">Your info</a>
+  <div id="modal1" class="modal green lighten-4">
+    <div class="modal-content">
+      <h4>User Info</h4>
+      <!-- form structure -->
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="placeholder" id="first_name" type="text" class="validate">
+          <label for="first_name">first name</label>
         </div>
       </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="placeholder" id="state" type="text" class="validate">
+          <label for="something">address</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="placeholder" id="income" type="text" class="validate">
+          <label for="income">annual income</label>
+        </div>
+      </div>
+    </form>
+  </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" id="submit" class="modal-close waves-effect waves-light btn-flat">Submit</a>
     </div>
   </div>
 
 
+  <!-- table structure
+  <table class="highlighted"> Table Title
+    <thead>
+      <tr>
+          <th>Name</th>
+          <th>Item Name</th>
+          <th>Item Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Alvin</td>
+        <td>Eclair</td>
+        <td>$0.87</td>
+      </tr>
+      <tr>
+        <td>Alan</td>
+        <td>Jellybean</td>
+        <td>$3.76</td>
+      </tr>
+      <tr>
+        <td>Jonathan</td>
+        <td>Lollipop</td>
+        <td>$7.00</td>
+      </tr>
+    </tbody>
+  </table> -->
 
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-      </script>
-      <script src="assets/javascript/giphy.js"></script>
+      <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <script src="assets/javascript/giphy.js"></script>
+
 </body>
 
 </html>
