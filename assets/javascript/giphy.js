@@ -1,15 +1,14 @@
 $(function () {
 
   var config = {
-    apiKey: "AIzaSyDoN5wEJkwUWFOZn6FI-B6RVcfNQeqCq1s",
-    authDomain: "newfirebase-eea98.firebaseapp.com",
-    databaseURL: "https://newfirebase-eea98.firebaseio.com",
-    projectId: "newfirebase-eea98",
-    storageBucket: "newfirebase-eea98.appspot.com",
-    messagingSenderId: "602574684541"
+    apiKey: "AIzaSyA_OTRPTqH6qlBHv6DgxXyZZROR5TYIQoc",
+    authDomain: "team-project-6fc1b.firebaseapp.com",
+    databaseURL: "https://team-project-6fc1b.firebaseio.com",
+    projectId: "team-project-6fc1b",
+    storageBucket: "team-project-6fc1b.appspot.com",
+    messagingSenderId: "419635299308"
   };
   firebase.initializeApp(config);
-
 
   const database = firebase.database();
 
@@ -36,12 +35,6 @@ $(function () {
 
     if (tmp != "") {
       user.income = tmp;
-    };
-
-    tmp = $("#age").val().trim();
-
-    if (tmp != "") {
-      user.age = tmp;
     };
 
     writeUserData(user);

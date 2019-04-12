@@ -2,7 +2,7 @@
     background-color: rgb(255, 255, 255)
 }
 
-.text {
+.text, .navbartext {
 font-family: 'Montserrat', sans-serif;
 /* font-family: 'Raleway', sans-serif;
 font-family: 'Quicksand', sans-serif;
@@ -14,30 +14,20 @@ font-family: 'Quattrocento Sans', sans-serif; */
 font-weight: bold;
 }
 
-.jumbotron {
-    background-color: black;
-    max-height: 175px;
-    background-image: url('https://media0.giphy.com/media/xNBcChLQt7s9a/giphy.gif?cid=790b76115ca783c035307238510bbff6')
-}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
-.jmbtrntext {
-    font-family: 'Shadows Into Light Two', cursive;
-    font-weight: bolder;
-    color: white;
-}
+  main {
+    flex: 1 0 auto;
+  }
 
-.btntext {
-    font-family: 'Shadows Into Light Two', cursive;
-    font-weight: bolder;
-    color: white;
-    outline: none;
-    font-kerning: 4px;
-}
+/* .sliders {
+    max-width: 50%;
+} */
 
-#topicBtns {
-    margin: 0 auto;
-}
-
-.giphylink {
-    color: white;
+.navbarheight, .navbarbkgrnd {
+    height: 125px !important; 
 } 
