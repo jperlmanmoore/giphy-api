@@ -1,62 +1,40 @@
- body {
-    background-color: rgb(255, 255, 255)
-}
-
-/* .text, .navbartext { */
-/* font-family: 'Montserrat', sans-serif; */
-/* font-family: 'Raleway', sans-serif; */
-/* font-family: 'Quicksand', sans-serif; */
-/* font-family: 'Dosis', sans-serif; */
-/* font-family: 'Hind', sans-serif; */
-/* font-family: 'Asap', sans-serif; */
-/* font-family: 'Questrial', sans-serif; */
-/* font-family: 'Quattrocento Sans', sans-serif; */
-/* font-weight: bold; */
-/* } */
-
-.navbartext {
-    font-family: 'Montserrat', sans-serif;
-    /* font-family: 'Raleway', sans-serif; */
-    /* font-family: 'Quicksand', sans-serif; */
-    /* font-family: 'Dosis', sans-serif; */
-    /* font-family: 'Hind', sans-serif; */
-    /* font-family: 'Asap', sans-serif; */
-    /* font-family: 'Questrial', sans-serif; */
-    /* font-family: 'Quattrocento Sans', sans-serif; */
-    font-weight: bold;
-    }
-
-    .text {
-        /* font-family: 'Montserrat', sans-serif; */
-        /* font-family: 'Raleway', sans-serif; */
-        font-family: 'Quicksand', sans-serif;
-        /* font-family: 'Dosis', sans-serif; */
-        /* font-family: 'Hind', sans-serif; */
-        /* font-family: 'Asap', sans-serif; */
-        /* font-family: 'Questrial', sans-serif; */
-        /* font-family: 'Quattrocento Sans', sans-serif; */
-        font-weight: bold;
-        }
-
-h4 {
-    line-height: 20px;
-}
-]
-
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+    background-color: rgb(243, 242, 242)
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+.text {
+/*font-family: 'Shadows Into Light', cursive;*/
+font-family: 'Shadows Into Light Two', cursive;
+font-weight: bold;
+/*font-family: 'Nothing You Could Do', cursive;*/
+}
 
-/* .sliders {
-    max-width: 50%;
-} */
+.jumbotron {
+    background-color: black;
+    max-height: 175px;
+    background-image: url('https://media0.giphy.com/media/xNBcChLQt7s9a/giphy.gif?cid=790b76115ca783c035307238510bbff6')
+}
 
-.navbarheight, .navbarbkgrnd {
-    height: 100px !important; 
-} 
+.jmbtrntext {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-weight: bolder;
+    color: white;
+}
+
+.btntext {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-weight: bolder;
+    color: white;
+    outline: none;
+    font-kerning: 4px;
+}
+
+#topicBtns {
+    margin: 0 auto;
+}
+
+.giphylink {
+    color: white;
+}
+
+
