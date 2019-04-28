@@ -8,296 +8,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Anton|Asap|Dosis|Hind|Montserrat|Quattrocento+Sans|Questrial|Quicksand|Raleway"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Shadows+Into+Light|Shadows+Into+Light+Two"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
+    <p><a href="https://giphy.com/gifs/shine-particles-box-3xz2BRU6WpaxKiPzuE">via GIPHY</a></p>
 
-  <!-- Navbar structure -->
-  <div class="navbar-fixed navbarheight">
-    <nav class="light-green">
-      <div class="navbarbkgrnd light-green navbartext">
-        <h1 class="center black-text">BUDGET</h1>
-      </div>
-    </nav>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-2 text-center jmbtrntext">Success!</h1>
+    </div>
   </div>
 
-  <br>
-  <br>
-
-  <div class="container text center">
-    <h4>compare your budget to</h4>
-    <h4>national median income household budget</h4>
+  <div class="container-fluid">
+    <div class="form">
+      <input type="text" class="form-control" id="input">
+      <button type="submit" id="inputBtn" class="btn btntext text-dark my-2">SEARCH & CLICK TO ADD A NEW BUTTON & GET MORE GIPHYS!</button>
+    </div>
   </div>
 
-  <div class="container">
-    
+  <div class="container-fluid">
     <div class="row">
-      <!-- * I like the cards better, butI did one row as colum and one row as cards. You guys can pick the difference and see what you like better. -->
-      <!-- sliders -->
-      <div class="col s12 m6">
-        <div class="card light-green lighten-5">
-          <div class="card-content dark-text">
-            <span class="card-title center">My Budget</span>
-            <p>Income from user input</p>
-            <p>Minus estimated Taxes from API data</p>
-            <p>sliders</p>
-            <p>sliders</p>
-            <p>sliders</p>
-            <p>sliders</p>
-            <p>sliders</p>
-          </div>
-          <div class="card-action">
-            <p>Total</p>
-          </div>
-        </div>
-      </div>
-      <!-- space -->
-      <div class="col s1"></div>
-      <!-- compare -->
-      <div class="col s12 m6">
-        <div class="card-panel light-green lighten-4">
-          <p class="text center">Median Income for STATE</p>
-          <p class="text center">3452346</p>
-          <hr>
-          <p class="text center">Estimated Federal Taxes</p>
-          <p class="text center">342342</p>
-          <hr>
-          <p class="text center">National Median Income Budget</p>
-          <p class="text center">This is the second paragraph.</p>
-          <!-- ***API DATA ON Median Income in that AREA -->
-          <!-- ***BLS DATA ON MEDIAN HOUSEHOLD INCOME AND BUDGET*** -->
-        </div>
+      <div class="col-12">
+        <div id="topicBtns"></div>
       </div>
     </div>
+  </div>
 
-    <div class="container">
-        <!-- Modal Structure -->
-        <a class="waves-effect waves-light light-green lighten-5 btn modal-trigger black-text" href="#modal1">Enter Your
-          income</a>
-        <div id="modal1" class="modal">
-          <div class="modal-content">
-            <h4 class="dark-text">Enter your information</h4>
-            <!-- form structure -->
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input placeholder="placeholder" id="first_name" type="text" class="validate">
-                    <label for="first_name">first name</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input placeholder="placeholder" id="state" type="text" class="validate">
-                    <label for="something">address</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input placeholder="placeholder" id="income" type="text" class="validate">
-                    <label for="income">annual income</label>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" id="submit" class="modal-close waves-effect waves-light btn-flat">Submit</a>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-
-
+  <div class="container-fluid">
     <div class="row">
-      <!-- * I like the cards better, butI did one row as colum and one row as cards. You guys can pick the difference and see what you like better. -->
-      <div class="col s6">
-        <div class="card light-green lighten-5">
-          <div class="card-content dark-text">
-            <span class="card-title center">My Budget</span>
-            <p>Income from user input</p>
-            <p>Minus estimated Taxes from API data</p>
-            <br>
-            <p>sliders</p>
-            <br>
-            <p>sliders</p>
-            <br>
-            <p>sliders</p>
-            <br>
-            <p>sliders</p>
-            <br>
-            <p>sliders</p>
-            <br>
-            <p>sliders</p>
-            <br>
-          </div>
-          <div class="card-action">
-            <p>Total</p>
-          </div>
+      <div class="col-12">
+        <div id="gifs">
         </div>
       </div>
-  <!-- space -->
-      <div class="col s1"></div>
-      <!-- compare -->
-      <div class="col s6">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Natioanl Median Income<i class="material-icons right">see this budget</i></span>
-            <p><a href="#">Link to Article</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Budget for Natioanl Household Medican Income<i class="material-icons right">close</i></span>
-            <p>List that budget</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s6">
-          <div class="card-panel light-green lighten-4">
-            <p class="text center">State Median Income</p>
-            <p class="text center">$23452345</p>
-            <!-- ***API DATA ON Median Income in that AREA -->
-          </div>
-      </div>
-
-      <div class="col s6">
-          <div class="card-panel light-green lighten-3">
-            <p class="text center">Federal Estimated Taxes</p>
-            <p class="text center">$23452345</p>
-            <!-- ***API DATA ON federal estimated income tax in that AREA -->
-          </div>
-      </div>   
     </div>
-
-    <div class="container">
-        <!-- Modal Structure -->
-        <a class="waves-effect waves-light light-green lighten-5 btn modal-trigger black-text" href="#modal1">Enter Your
-          income</a>
-        <div id="modal1" class="modal">
-          <div class="modal-content">
-            <h4 class="dark-text">Enter your information</h4>
-            <!-- form structure -->
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input placeholder="placeholder" id="first_name" type="text" class="validate">
-                    <label for="first_name">first name</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input placeholder="placeholder" id="state" type="text" class="validate">
-                    <label for="something">address</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input placeholder="placeholder" id="income" type="text" class="validate">
-                    <label for="income">annual income</label>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" id="submit" class="modal-close waves-effect waves-light btn-flat">Submit</a>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-    
-
   </div>
 
-  
-
-  <br>
 
 
-  <!-- table structure -->
-  <!-- you add new colums by adding <th> tag -->
-  <!-- maybe we can put the user budget and comparison in side by side tables and let the user print or email that -->
-  <div class="container">
-    <table class="highlight centered responsive">
-      <p class="text center">comparison of recent user data</p>
-      <thead>
-        <tr>
-          <th class="text">Name</th>
-          <th class="text">State</th>
-          <th class="text">Income</th>
-          <th class="text">Taxes</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td class="text">Alvin</td>
-          <td class="text">Eclair</td>
-          <td class="text">$0.87</td>
-          <td class="text">$.10</td>
-        </tr>
-        <tr>
-          <td class="text">Alvin</td>
-          <td class="text">Eclair</td>
-          <td class="text">$0.87</td>
-          <td class="text">$.10</td>
-        </tr>
-        <tr>
-          <td class="text">Alvin</td>
-          <td class="text">Eclair</td>
-          <td class="text">$0.87</td>
-          <td class="text">$.10</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <br>
-
-  <footer class="page-footer light-green lighten-4">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="black-text">Footer Content</h5>
-          <p class="black-text text-lighten-4">Budget established in 2019, in Atlanta, GA and founded by amazing students in the GA Tech coding Bootcamp. </p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="black-text">Some links here</h5>
-          <ul>
-            <li><a class="black-text" href="#!">Link 1</a></li>
-            <li><a class="black-text" href="#!">Link 2</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container center">
-        © 2019 Bootcamp Project1 Team1
-      </div>
-    </div>
-  </footer>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-  <script src="assets/javascript/giphy.js"></script>
-
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+      </script>
+      <script src="assets/javascript/giphy.js"></script>
 </body>
 
 </html>
